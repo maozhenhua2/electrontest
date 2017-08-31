@@ -1,0 +1,12 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "author": "mzh",
+  "manifest": [
+    {
+      "version": "1.0.1",
+      "file": ["index.css"],
+      "detail": ["更改背景"]
+    }
+  ]
+}
