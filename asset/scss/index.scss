@@ -1,0 +1,166 @@
+@import "base/default";
+@import "base/fn";
+@import "base/placeholder";
+
+@include font-face(maozedong, url("../vendor/font/maozedong.ttf"));
+
+body {
+  -webkit-app-region: drag;
+  background-color: #333;
+  //background-color: transparent;
+  //background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.75) 100%);
+  //background-size: 15px 15px;
+}
+
+#wrapper {
+  padding: 10px;
+}
+
+#hello {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+#rtl {
+  font-size: 2rem;
+  margin: 20px auto;
+  padding: 20px 3rem;
+  writing-mode: vertical-rl;
+  font-family: "maozedong";
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 230, 179, 1) 0%,
+      rgba(255, 230, 179, 1) 90%,
+      rgba(200, 200, 200, 0.1) 91%,
+      rgba(200, 200, 200, 0.1) 100%
+  );
+  background-size: 3rem 2rem;
+  box-shadow: 1px 1px 4px 2px rgb(95, 95, 95) inset;
+  border: 5px solid #7d5b00;
+  border-radius: 5px/5px;
+  h1 {
+    margin: 0 0 0 3.3rem;
+    font-size: 2rem;
+  }
+  p {
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+#tmp {
+  $size: 15px;
+  $accent: rgba(0, 0, 0, .25);
+  width: 100%;
+  background-image: linear-gradient(45deg, $accent 25%, transparent 0, transparent 75%, $accent 0),
+  linear-gradient(45deg, $accent 25%, transparent 0, transparent 75%, $accent 0);
+  background-position: 0 0, $size $size;
+  background-size: 2*$size 2*$size;
+}
+
+.icon-plus {
+  $half: 13%;
+  $size: 20px;
+  $start: 50% - $half;
+  $end: 50% + $half;
+  width: $size;
+  height: $size;
+  display: inline-block;
+  border-radius: 50%/50%;
+  background-color: #595cff;
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) $start, rgba(255, 255, 255, 1) $start, rgba(255, 255, 255, 1) $end, rgba(255, 255, 255, 0) $end, rgba(255, 255, 255, 0) 100%), linear-gradient(90deg, rgba(255, 255, 255, 0) $start, rgba(255, 255, 255, 1) $start, rgba(255, 255, 255, 1) $end, rgba(255, 255, 255, 0) $end, rgba(255, 255, 255, 0) 100%);
+  background-size: round($size * 0.6) round($size * 0.6);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.icon-minus {
+  $half: 13%;
+  $size: 20px;
+  $start: 50% - $half;
+  $end: 50% + $half;
+  width: $size;
+  height: $size;
+  display: inline-block;
+  border-radius: 50%/50%;
+  background-color: #595cff;
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) $start, rgba(255, 255, 255, 1) $start, rgba(255, 255, 255, 1) $end, rgba(255, 255, 255, 0) $end, rgba(255, 255, 255, 0) 100%);
+  background-size: round($size * 0.6);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+.icon-multiply {
+  $half: 11.5%;
+  $size: 20px;
+  $start: 50% - $half - 1%;
+  $end: 50% + $half;
+  width: $size;
+  height: $size;
+  display: inline-block;
+  border-radius: 50%/50%;
+  background-color: #595cff;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0) $start, rgba(255, 255, 255, 1) $start, rgba(255, 255, 255, 1) $end, rgba(255, 255, 255, 0) $end, rgba(255, 255, 255, 0) 100%), linear-gradient(135deg, rgba(255, 255, 255, 0) $start, rgba(255, 255, 255, 1) $start, rgba(255, 255, 255, 1) $end, rgba(255, 255, 255, 0) $end, rgba(255, 255, 255, 0) 100%);
+  background-size: round($size * 0.5) round($size * 0.5);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+%icon-arr {
+  $half: 12%;
+  $size: 20px;
+  $start1: 50% - $half;
+  $end1: 50% + $half;
+  $start: 50%;
+  width: $size;
+  height: $size;
+  display: inline-block;
+  border-radius: 50%/50%;
+  background-color: #595cff;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0) $start1, rgba(255, 255, 255, 1) $start1, rgba(255, 255, 255, 1) $end1, rgba(255, 255, 255, 0) $end1, rgba(255, 255, 255, 0) 100%), linear-gradient(135deg, rgba(255, 255, 255, 0) $start, rgba(255, 255, 255, 1) $start + 1, rgba(255, 255, 255, 1) 100%);
+  background-size: round($size * 0.5) round($size * 0.5), round($size * 0.45) round($size * 0.45);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.icon-arr-r {
+  @extend %icon-arr;
+  transform: rotate(-45deg);
+}
+
+.icon-arr-l {
+  @extend %icon-arr;
+  transform: rotate(135deg);
+}
+
+.icon-arr-t {
+  @extend %icon-arr;
+  transform: rotate(-135deg);
+}
+
+.icon-arr-b {
+  @extend %icon-arr;
+  transform: rotate(45deg);
+}
+
+#box {
+  width: 300px;
+  height: 300px;
+  padding: 75px;
+}
+
+#matrix {
+  width: 150px;
+  height: 150px;
+  background-color: #c3d9ff;
+  margin: auto;
+  transition: all 1s linear;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  background-image: url("http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg");
+  &:hover {
+    border-radius: 50%/50%;
+    transform: scale(2, 2) rotate(90deg);
+  }
+}
