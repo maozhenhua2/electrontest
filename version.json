@@ -5,7 +5,7 @@
   "manifest": [
     {
       "version": "1.0.1",
-      "file": ["index.css"],
+      "files": ["index.css"],
       "detail": ["更改背景"]
     }
   ]
