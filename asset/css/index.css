@@ -1,0 +1,175 @@
+@charset "UTF-8";
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  font-family: "Microsoft Yahei", Verdana, Simsun, Arial;
+  background-color: #fff;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* from css揭秘 */
+/* 背景波点 */
+/* 调用
+@include polka(30px, 30%, #655, tan); */
+/* 棋盘背景 */
+/* 调用
+@include checkerboard(15px, #58a, tan); */
+/* 斜面切角效果 */
+/* 调用
+@include beveled-corners(#58a, 15px, 5px); */
+/* 折角效果 */
+/* 当调用时... */
+/* .note {
+  @include folded-corner(#58a, 2em, 40deg);
+} */
+@font-face {
+  font-family: "maozedong";
+  src: url("../vendor/font/maozedong.ttf");
+}
+body {
+  -webkit-app-region: drag;
+  background-color: #333;
+}
+
+#wrapper {
+  padding: 10px;
+}
+
+#hello {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+#rtl {
+  font-size: 2rem;
+  margin: 20px auto;
+  padding: 20px 3rem;
+  writing-mode: vertical-rl;
+  font-family: "maozedong";
+  background-image: linear-gradient(90deg, #ffe6b3 0%, #ffe6b3 90%, rgba(200, 200, 200, 0.1) 91%, rgba(200, 200, 200, 0.1) 100%);
+  background-size: 3rem 2rem;
+  box-shadow: 1px 1px 4px 2px #5f5f5f inset;
+  border: 5px solid #7d5b00;
+  border-radius: 5px/5px;
+}
+#rtl h1 {
+  margin: 0 0 0 3.3rem;
+  font-size: 2rem;
+}
+#rtl p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+#tmp {
+  width: 100%;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.25) 0%), linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.25) 0%);
+  background-position: 0 0, 15px 15px;
+  background-size: 30px 30px;
+}
+
+.icon-plus {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%/50%;
+  background-color: #595cff;
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 37%, #ffffff 37%, #ffffff 63%, rgba(255, 255, 255, 0) 63%, rgba(255, 255, 255, 0) 100%), linear-gradient(90deg, rgba(255, 255, 255, 0) 37%, #ffffff 37%, #ffffff 63%, rgba(255, 255, 255, 0) 63%, rgba(255, 255, 255, 0) 100%);
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.icon-minus {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%/50%;
+  background-color: #595cff;
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 37%, #ffffff 37%, #ffffff 63%, rgba(255, 255, 255, 0) 63%, rgba(255, 255, 255, 0) 100%);
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.icon-multiply {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%/50%;
+  background-color: #595cff;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0) 37.5%, #ffffff 37.5%, #ffffff 61.5%, rgba(255, 255, 255, 0) 61.5%, rgba(255, 255, 255, 0) 100%), linear-gradient(135deg, rgba(255, 255, 255, 0) 37.5%, #ffffff 37.5%, #ffffff 61.5%, rgba(255, 255, 255, 0) 61.5%, rgba(255, 255, 255, 0) 100%);
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.icon-arr-r, .icon-arr-l, .icon-arr-t, .icon-arr-b {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%/50%;
+  background-color: #595cff;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0) 38%, #ffffff 38%, #ffffff 62%, rgba(255, 255, 255, 0) 62%, rgba(255, 255, 255, 0) 100%), linear-gradient(135deg, rgba(255, 255, 255, 0) 50%, #ffffff 51%, #ffffff 100%);
+  background-size: 10px 10px, 9px 9px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.icon-arr-r {
+  transform: rotate(-45deg);
+}
+
+.icon-arr-l {
+  transform: rotate(135deg);
+}
+
+.icon-arr-t {
+  transform: rotate(-135deg);
+}
+
+.icon-arr-b {
+  transform: rotate(45deg);
+}
+
+#box {
+  width: 300px;
+  height: 300px;
+  padding: 75px;
+}
+
+#matrix {
+  width: 150px;
+  height: 150px;
+  background-color: #c3d9ff;
+  margin: auto;
+  transition: all 1s linear;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  background-image: url("http://image.zhangxinxu.com/image/study/s/s256/mm1.jpg");
+}
+#matrix:hover {
+  border-radius: 50%/50%;
+  transform: scale(2, 2) rotate(90deg);
+}
+
+/*# sourceMappingURL=index.css.map */

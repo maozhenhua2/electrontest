@@ -5,7 +5,11 @@
   "manifest": [
     {
       "version": "1.0.1",
-      "files": ["index.css"],
+      "files": [
+        "asset/scss/index.scss",
+        "asset/css/index.css",
+        "asset/css/index.css.map"
+      ],
       "detail": ["更改背景"]
     }
   ]
